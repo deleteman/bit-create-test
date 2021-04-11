@@ -33,10 +33,17 @@
      */
     "packageManager": "teambit.dependencies/pnpm",
     "policy": {
-      "dependencies": {},
-      "peerDependencies": {
-      }
-    }
+      "dependencies": {
+        "@teambit/envs": "0.0.352",
+        "@teambit/node": "0.0.352"
+      },
+      "peerDependencies": {}
+    },
+    "packageManagerArgs": [],
+    "devFilePatterns": [
+      "**/*.spec.ts"
+    ],
+    "strictPeerDependencies": true
   },
   /**
    * workspace variants allow to set different subsets of configuration for components in your workspace.
@@ -44,11 +51,11 @@
    * new set of dependencies.
    **/
   "teambit.workspace/variants": {
-    "custom-node-env": {
+    "my-scope/extensions/custom-node-env": {
       "teambit.harmony/aspect": {}
     },
-    "logger": {
-       "my-scope.extensions/custom-node-env": { }
+    "my-scope/components/logger": {
+      "my-scope.extensions/custom-node-env": {}
     }
   }
 }
